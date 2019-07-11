@@ -1,0 +1,51 @@
+baseURL: "https://clojure.wladyka.eu/"
+title: "Clojure Blog"
+
+paginate: 10
+theme: "simple-blog"
+params:
+  description: "Clojure blog"
+  logo: "/img/clojure-logo.svg"
+  favicon: "/img/clojure-icon-32.png"
+  feed: "/posts/index.xml"
+
+# buildDrafts = true
+# buildFuture = true
+# canonifyURLs = true
+
+menu:
+  top:
+  - name: Author
+    url: http://wladyka.eu/
+    weight: 1
+  - name: Archive
+    url: /posts
+    weight: 2
+
+# sitemap:
+#   changefreq: monthly
+#   filename: sitemap.xml
+#   priority: 0.5
+
+disqusShortname: clojure-wladyka
+
+taxonomies:
+  tag: "tags"
+
+# highligh syntax github style
+pygmentsCodeFences: "true"
+pygmentsStyle: "monokai"
+# pygmentsOptions: "linenos=table"
+# pygmentsUseClassic: "true"
+# monokai, autumn, pastie, perldoc, trac, default, friendly
+
+## SEO
+
+# enableRobotsTXT = true
+
+# TOC
+# https://gohugo.io/content-management/toc/
+
+googleAnalytics: UA-2159845-11
+languageCode: "en-us"
+disableHugoGeneratorInject: true
