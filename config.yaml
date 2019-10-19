@@ -16,11 +16,8 @@ params:
 menu:
   top:
   - name: Author
-    url: http://wladyka.eu/
+    url: https://wladyka.eu
     weight: 1
-  - name: Archive
-    url: /posts
-    weight: 2
 
 # sitemap:
 #   changefreq: monthly

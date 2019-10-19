@@ -1,9 +1,10 @@
 ---
-title: "How to improve algorithm speed?"
+title: "How to improve algorithm performance?"
 tags:  ["performance"]
 date: 2015-08-24
 aliases:
   - /posts-output/2015-08-24-how-to-improve-algorithm-speed.html
+  - /posts/how-to-improve-algorithm-speed/
 ---
 
 I describe how to improve performance based on my real experience during chess challenge. No theory, real use case.
