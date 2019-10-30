@@ -233,7 +233,7 @@ This let you show the error message in right place of the user interface.
 ### Trick about mirroring `s/def` and `:via`
 
 ```clojure
-(s/def ::instant (partial s/valid? inst?))
+(s/def ::instant inst?)
 (s/def ::created ::instant)
 
 (s/explain-data ::created 0)
