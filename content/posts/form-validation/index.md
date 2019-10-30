@@ -1,7 +1,7 @@
 ---
 title: "How to validate form in ClojureScript using spec?"
 tags:  ["clojurescript", "spec"]
-date: 2019-10-29
+date: 2019-10-30
 ---
 
 How to use `spec` for form validation and return human understandable errors? Should you at all?
