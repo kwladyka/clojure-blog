@@ -1,0 +1,47 @@
+name: master -> gh-pages
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: recursive
+        fetch-depth: 1
+        token: ${{ secrets.GITHUB_PAT }}
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2.2.2
+      with:
+        hugo-version: '0.58.3'
+        extended: true
+
+    - name: Build
+      run: hugo --minify
+      env:
+        HUGO_ENV: production
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      with:
+        emptyCommits: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public
+
+    - name: Slack notifications
+      uses: 8398a7/action-slack@v2
+      with:
+        status: ${{ job.status }}
+        author_name: GitHub Actions
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      if: always()
